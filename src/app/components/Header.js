@@ -7,13 +7,12 @@ export default function Header() {
   return (
     <header className="fixed top-0 left-0 w-full bg-white shadow-md z-50">
       <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
-        
-        {/* Logo */}
+     
         <Link href="/" className="text-2xl font-bold text-blue-600">
           Realty<span className="text-gray-800">Hub</span>
         </Link>
 
-        {/* Navigation */}
+           
         <nav className="hidden md:flex space-x-8 text-gray-700 font-medium">
           <Link href="/" className="hover:text-blue-600">Home</Link>
           <Link href="/listings" className="hover:text-blue-600">Listings</Link>
@@ -22,10 +21,10 @@ export default function Header() {
           <Link href="/contact" className="hover:text-blue-600">Contact</Link>
         </nav>
 
-        {/* Right Side */}
+          
         <div className="flex items-center space-x-4">
-          {/* If NOT signed in → show Sign In button */}
-          <SignedOut>  //can also do this using useAuth hooks  from clerk/nextjs
+      
+          <SignedOut>  
             <Link 
               href="/sign-in"
               className="px-5 py-2 rounded-full bg-blue-600 text-white font-medium hover:bg-blue-700 transition"
@@ -34,7 +33,7 @@ export default function Header() {
             </Link>
           </SignedOut>
 
-          {/* If signed in → show UserButton (with sign out) */}
+          
           <SignedIn>
             <UserButton afterSignOutUrl="/" />
           </SignedIn>
